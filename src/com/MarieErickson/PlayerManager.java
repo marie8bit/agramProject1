@@ -13,14 +13,14 @@ public class PlayerManager {
             Player ply = new Player(x);
             players.add(ply);
         }
-        int deal=1;
+        int deal=0;
         while(deal<=2){
-        for (Player player:players) {
-            player.hand.add(deck.deal());
-            player.hand.add(deck.deal());
-            player.hand.add(deck.deal());
-            deal++;
-        }
+            for (Player player:players) {
+                player.hand.add(deck.deal());
+                player.hand.add(deck.deal());
+                player.hand.add(deck.deal());
+                deal++;
+            }
         }
     }
 }
