@@ -23,7 +23,12 @@ public class Card {
     public String getName() {
         return name;
     }
-
+//    public Card(){
+//        this.value;
+//        this.suit;
+//        this.name;
+//
+//    }
     public Card(String s, int v, String n){
         this.value = v;
         this.suit = s;
