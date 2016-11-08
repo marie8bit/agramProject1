@@ -4,19 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        Scanner scanner = new Scanner(System.in);
         int winner = 0;
         Deck deck = new Deck();
-        System.out.println(deck);
+        //System.out.println(deck);
         //todo allow for choice of numbers of human players/comp players?
         // vaidate/max 5
-        PlayerManager plMgmt = new PlayerManager(5, deck);
-        System.out.println(deck);
-        for (Player plyr:plMgmt.players){
-            System.out.println(plyr.hand.toString());
-        }
+        PlayerManager plMgmt = new PlayerManager(2, deck);
+        //System.out.println(deck);
+        //for (Player plyr:plMgmt.players){
+            //System.out.println(plyr.hand.toString());
+        //}
         for (int z= 0;z<6;z++){
-        winner = plMgmt.round();
+        plMgmt.round();
         }
-        System.out.println("Player"+winner+" won the game");
+        System.out.println("Player"+plMgmt.getLastRoundWinner()+" won the game");
     }
 }
