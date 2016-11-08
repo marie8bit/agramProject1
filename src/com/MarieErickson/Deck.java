@@ -1,6 +1,7 @@
 package com.MarieErickson;
 
 /**
+ * Deck is not normal 52 card deck
  * Created by Marie on 10/24/2016.
  */
 import java.util.*;
@@ -15,7 +16,7 @@ public class Deck {
     public void setRng(Random rng) {
         this.rng = rng;
     }
-
+//contructor for deck
     public Deck() {
         rng = new Random();
         //variable to count 52 cards
@@ -31,6 +32,7 @@ public class Deck {
 
         }
     }
+    //removes chief/not included in deck
     Card chief= null;
     for (Card cd:deck) {
         if (cd.suit.equals("Spades") && cd.value == 11) {
@@ -42,6 +44,7 @@ public class Deck {
         deck.remove(chief);
     }
 }
+//toString method for deck/used in testing
     public String toString(){
         String message="";
         for (Card crd:deck) {
@@ -50,6 +53,7 @@ public class Deck {
         }
         return message;
     }
+    //deals random card from the cards that are left in the deck
     public Card deal(){
         int cardsLeft = this.deck.size();
         int cardpick = rng.nextInt(cardsLeft);

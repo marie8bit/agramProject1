@@ -3,21 +3,15 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        Scanner scanner = new Scanner(System.in);
-        int winner = 0;
+        //create game deck
         Deck deck = new Deck();
-        //System.out.println(deck);
-        //todo allow for choice of numbers of human players/comp players?
-        // vaidate/max 5
+        //creates players
         PlayerManager plMgmt = new PlayerManager(2, deck);
-        //System.out.println(deck);
-        //for (Player plyr:plMgmt.players){
-            //System.out.println(plyr.hand.toString());
-        //}
+        //calls round method 6 times per agram rules
         for (int z= 0;z<6;z++){
         plMgmt.round();
         }
+        //provides user with information
         System.out.println("Player"+plMgmt.getLastRoundWinner()+" won the game");
     }
 }
